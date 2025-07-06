@@ -186,7 +186,7 @@ export const HomePage = () => {
                 size={buttonSize}
                 variant="white"
                 leftSection={<IconChartLine size={isMobile ? 20 : 24} />}
-                onClick={() => router.push(`/${currentLang}/contact`)}
+                onClick={() => router.push(`/${currentLang}/dataConsulting`)}
               >
                 {t("request_consultation")}
               </Button>

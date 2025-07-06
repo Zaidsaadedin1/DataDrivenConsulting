@@ -29,7 +29,7 @@ const fadeIn = keyframes({
 
 export default function DataConsulting() {
   const router = useRouter();
-  const { t, i18n } = useTranslation("appointments");
+  const { t, i18n } = useTranslation("dataConsulting");
   const currentLang = i18n.language;
   const isRTL = currentLang === "ar";
   const { user } = useAuth();
