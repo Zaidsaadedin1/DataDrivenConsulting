@@ -199,7 +199,7 @@ const Profile = ({
 
   console.log(userAppointments);
   return (
-    <>
+    <Stack mt={"50"}>
       {updateUserDataMutation.isPending ? (
         <LoadingOverlay />
       ) : (
@@ -398,7 +398,7 @@ const Profile = ({
           </Card>
         </Stack>
       )}
-    </>
+    </Stack>
   );
 };
 

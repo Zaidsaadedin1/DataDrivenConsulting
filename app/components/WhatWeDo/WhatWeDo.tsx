@@ -10,6 +10,7 @@ import {
   Box,
   Group,
   List,
+  Stack,
 } from "@mantine/core";
 import {
   IconChartLine,
@@ -53,7 +54,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <>
+    <Stack mt={"50"}>
       <Head>
         <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />
@@ -132,7 +133,7 @@ const WhatWeDo = () => {
           </Accordion>
         </Box>
       </Container>
-    </>
+    </Stack>
   );
 };
 

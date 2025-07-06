@@ -9,6 +9,7 @@ import {
   Badge,
   List,
   ThemeIcon,
+  Stack,
 } from "@mantine/core";
 import {
   IconDatabaseEdit,
@@ -55,7 +56,7 @@ const DataServices = () => {
   ];
 
   return (
-    <>
+    <Stack mt={"50"}>
       <Head>
         <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />
@@ -124,7 +125,7 @@ const DataServices = () => {
           ))}
         </Tabs>
       </Container>
-    </>
+    </Stack>
   );
 };
 

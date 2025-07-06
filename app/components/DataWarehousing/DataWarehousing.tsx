@@ -7,6 +7,7 @@ import {
   Card,
   ThemeIcon,
   List,
+  Stack,
 } from "@mantine/core";
 import {
   IconDatabase,
@@ -46,7 +47,7 @@ const DataWarehousing = () => {
   const benefits = t("benefits.items", { returnObjects: true }) as string[];
 
   return (
-    <>
+    <Stack mt={"50"}>
       <Head>
         <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />
@@ -99,7 +100,7 @@ const DataWarehousing = () => {
           <Text>{t("contact.description")}</Text>
         </div>
       </Container>
-    </>
+    </Stack>
   );
 };
 

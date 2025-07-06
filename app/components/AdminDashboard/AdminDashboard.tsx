@@ -102,7 +102,7 @@ function AdminDashboard({
   }
 
   return (
-    <Stack p="md">
+    <Stack p="md" mt={"50"}>
       {/* Statistics Cards */}
       <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }}>
         <Card withBorder>

@@ -168,7 +168,7 @@ export default function DataConsulting() {
   ];
 
   return (
-    <Container size="md" py="xl" dir={isRTL ? "rtl" : "ltr"}>
+    <Container size="md" py="xl" dir={isRTL ? "rtl" : "ltr"} mt={"50"}>
       <Title
         order={2}
         mb="md"

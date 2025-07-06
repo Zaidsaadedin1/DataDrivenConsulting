@@ -246,9 +246,9 @@ const SignUp = () => {
   });
 
   return (
-    <>
+    <Stack mt={"50"}>
       {registerMutation.isPending && <LoadingOverlay visible />}
-      <Stack dir={isRTL ? "rtl" : "ltr"} p="md">
+      <Stack dir={isRTL ? "rtl" : "ltr"} p="md" justify="center" align="center">
         {/* Main Form Content */}
         <Box component="div" style={{ animation: `${fadeIn} 0.8s ease-out` }}>
           <Title
@@ -436,7 +436,7 @@ const SignUp = () => {
           </Anchor>
         </Center>
       </Stack>
-    </>
+    </Stack>
   );
 };
 

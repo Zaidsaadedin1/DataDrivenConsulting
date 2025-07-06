@@ -163,10 +163,10 @@ export default function Login() {
   });
 
   return (
-    <>
+    <Stack mt={80}>
       {loginMutation.isPending && <LoadingOverlay visible />}
 
-      <Stack dir={isRTL ? "rtl" : "ltr"}>
+      <Stack dir={isRTL ? "rtl" : "ltr"} p="md" justify="center" align="center">
         <Title
           order={2}
           mb="md"
@@ -252,6 +252,6 @@ export default function Login() {
           </Text>
         </Box>
       </Stack>
-    </>
+    </Stack>
   );
 }

@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Card,
   ThemeIcon,
+  Stack,
 } from "@mantine/core";
 import {
   IconChartLine,
@@ -43,7 +44,7 @@ const AnalyticsSolutions = () => {
   ];
 
   return (
-    <>
+    <Stack mt={"50"}>
       <Head>
         <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />
@@ -86,7 +87,7 @@ const AnalyticsSolutions = () => {
           <Text>{t("contact.description")}</Text>
         </div>
       </Container>
-    </>
+    </Stack>
   );
 };
 
