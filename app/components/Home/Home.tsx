@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Title, Text, Group, Button, Box, ThemeIcon } from "@mantine/core";
+import {
+  Title,
+  Text,
+  Group,
+  Button,
+  Box,
+  ThemeIcon,
+  useMantineTheme,
+} from "@mantine/core";
 import { IconDatabase, IconChartLine } from "@tabler/icons-react";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "@mantine/hooks";
 
 const homePageVideo = "/videos/video1.mp4";
 
@@ -13,6 +22,9 @@ export const HomePage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const currentLang = i18n.language;
+  const theme = useMantineTheme();
+  const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  const isTablet = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -42,6 +54,13 @@ export const HomePage = () => {
     }
   }, []);
 
+  // Responsive font sizes
+  const titleSize = isMobile ? 32 : isTablet ? 48 : 60;
+  const textSize = isMobile ? "md" : isTablet ? "lg" : "xl";
+  const buttonSize = isMobile ? "md" : "xl";
+  const iconSize = isMobile ? 60 : 80;
+  const iconInnerSize = isMobile ? 30 : 40;
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,7 +89,7 @@ export const HomePage = () => {
       <Box
         style={{
           position: "relative",
-          height: "100vh", // Full viewport height
+          height: "100vh",
           width: "100%",
           overflow: "hidden",
         }}
@@ -109,26 +128,27 @@ export const HomePage = () => {
           </div>
         </video>
 
-        {/* Overlay content - always aligned to right */}
+        {/* Responsive content positioning */}
         <motion.div
           initial="hidden"
           animate={isVideoLoaded ? "visible" : "hidden"}
           variants={containerVariants}
           style={{
             position: "absolute",
-            right: "10%",
+            right: isMobile ? "5%" : "10%",
             top: "50%",
             transform: "translateY(-50%)",
             zIndex: 2,
-            width: "50%",
+            width: isMobile ? "90%" : isTablet ? "70%" : "50%",
             maxWidth: "600px",
             textAlign: "right",
+            padding: isMobile ? "0 10px" : "0",
           }}
         >
           <motion.div variants={itemVariants}>
-            <Group justify="flex-end" mb="xl">
-              <ThemeIcon size={80} radius="xl" variant="white">
-                <IconDatabase size={40} />
+            <Group justify="flex-end" mb={isMobile ? "md" : "xl"}>
+              <ThemeIcon size={iconSize} radius="xl" variant="white">
+                <IconDatabase size={iconInnerSize} />
               </ThemeIcon>
             </Group>
           </motion.div>
@@ -136,28 +156,36 @@ export const HomePage = () => {
           <motion.div variants={itemVariants}>
             <Title
               order={1}
-              size={60}
+              size={titleSize}
               fw={900}
               c="white"
-              mb="md"
-              style={{ textAlign: "right" }}
+              mb={isMobile ? "sm" : "md"}
+              style={{ textAlign: "right", lineHeight: 1.2 }}
             >
               {t("hero_title")}
             </Title>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Text size="xl" c="white" mb="xl" style={{ textAlign: "right" }}>
+            <Text
+              size={textSize}
+              c="white"
+              mb={isMobile ? "lg" : "xl"}
+              style={{
+                textAlign: "right",
+                lineHeight: 1.5,
+              }}
+            >
               {t("hero_subtitle")}
             </Text>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Group justify="flex-end" gap="lg" mb={60}>
+            <Group justify="flex-end" gap="lg" mb={isMobile ? 40 : 60}>
               <Button
-                size="xl"
+                size={buttonSize}
                 variant="white"
-                leftSection={<IconChartLine size={24} />}
+                leftSection={<IconChartLine size={isMobile ? 20 : 24} />}
                 onClick={() => router.push(`/${currentLang}/contact`)}
               >
                 {t("request_consultation")}

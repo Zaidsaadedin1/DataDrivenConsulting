@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "الإعدادات | استشارات البيانات",
+    "description": "إدارة إعدادات حسابك وتفضيلاتك"
+  },
+  "title": "الإعدادات",
+  "account": {
+    "title": "الحساب",
+    "section_title": "إعدادات الحساب",
+    "email_notifications": "إشعارات البريد الإلكتروني",
+    "two_factor_auth": "المصادقة الثنائية",
+    "activity_reports": "تقارير النشاط الشهرية"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "section_title": "تفضيلات الإشعارات",
+    "description": "اضبط كيفية تلقي الإشعارات من منصتنا",
+    "coming_soon": "ستكون إعدادات الإشعارات متاحة في التحديث القادم"
+  },
+  "language": {
+    "title": "اللغة",
+    "section_title": "تفضيلات اللغة",
+    "description": "غير لغة العرض المفضلة لديك",
+    "coming_soon": "سيتم توفير اختيار اللغة في التحديث القادم"
+  },
+  "privacy": {
+    "title": "الخصوصية",
+    "section_title": "إعدادات الخصوصية",
+    "data_collection": "السماح بجمع البيانات",
+    "personalized_ads": "إعلانات مخصصة",
+    "location_tracking": "تتبع الموقع"
+  }
+}

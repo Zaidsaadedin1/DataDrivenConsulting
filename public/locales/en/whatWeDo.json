@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "What We Do | DataDriven Consulting",
+    "description": "Discover our comprehensive data solutions and consulting services"
+  },
+  "title": "What We Do",
+  "subtitle": "Transforming data into business value through innovative solutions",
+  "learn_more": "Learn more about this service",
+  "services": {
+    "data_analytics": {
+      "title": "Data Analytics",
+      "description": "Unlock insights from your data with our advanced analytics solutions",
+      "details": [
+        "Predictive analytics and modeling",
+        "Business intelligence dashboards",
+        "Data visualization services",
+        "Custom reporting solutions"
+      ]
+    },
+    "data_warehousing": {
+      "title": "Data Warehousing",
+      "description": "Modern data storage solutions for optimal performance",
+      "details": [
+        "Enterprise data warehouse design",
+        "ETL pipeline development",
+        "Data lake implementation",
+        "Cloud data warehouse solutions"
+      ]
+    },
+    "cloud_solutions": {
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure for your data needs",
+      "details": [
+        "Cloud migration services",
+        "Multi-cloud architecture",
+        "Serverless data processing",
+        "Cost optimization consulting"
+      ]
+    },
+    "data_security": {
+      "title": "Data Security",
+      "description": "Protect your valuable data assets",
+      "details": [
+        "Data governance frameworks",
+        "Compliance consulting",
+        "Encryption strategies",
+        "Access control systems"
+      ]
+    }
+  },
+  "approach": {
+    "title": "Our Approach",
+    "subtitle": "How we deliver exceptional results for our clients",
+    "steps": [
+      {
+        "title": "Discovery & Assessment",
+        "description": "We begin by thoroughly understanding your business needs, current infrastructure, and data challenges."
+      },
+      {
+        "title": "Solution Design",
+        "description": "Our experts create customized solutions tailored to your specific requirements and goals."
+      },
+      {
+        "title": "Implementation",
+        "description": "We deploy the solution with minimal disruption to your operations, ensuring smooth transition."
+      },
+      {
+        "title": "Ongoing Support",
+        "description": "We provide continuous monitoring, optimization, and support to ensure long-term success."
+      }
+    ]
+  }
+}

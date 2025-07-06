@@ -37,7 +37,15 @@ const MenuComponent = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const renderAuthMenu = () => (
-    <Menu>
+    <Menu
+      shadow="md"
+      styles={{
+        dropdown: {
+          zIndex: 1001,
+          backdropFilter: "none",
+        },
+      }}
+    >
       <Menu.Target>
         <Button
           variant="subtle"
@@ -56,7 +64,7 @@ const MenuComponent = () => {
           </Group>
         </Button>
       </Menu.Target>
-      <Menu.Dropdown>
+      <Menu.Dropdown ff="Oswald, sans-serif">
         {user?.Roles?.includes("Admin") && (
           <Menu.Item
             onClick={() => router.push(`/${currentLang}/adminDashboard`)}
@@ -102,38 +110,44 @@ const MenuComponent = () => {
 
   const mainMenuItems = [
     {
-      path: "/data-consulting",
+      path: "/dataConsulting",
       icon: IconChartLine,
       text: t("data_consulting"),
-      en: "Data Consulting",
-      ar: "استشارات البيانات",
     },
     {
-      path: "/analytics-solutions",
+      path: "/analyticsSolutions",
       icon: IconFileAnalytics,
       text: t("analytics_solutions"),
-      en: "Analytics Solutions",
-      ar: "حلول التحليلات",
     },
     {
-      path: "/data-warehousing",
+      path: "/dataWarehousing",
       icon: IconBuildingWarehouse,
       text: t("data_warehousing"),
-      en: "Data Warehousing",
-      ar: "تخزين البيانات",
     },
     {
       path: "/settings",
       icon: IconSettings,
       text: t("settings_directory"),
-      en: "Settings Directory",
-      ar: "دليل الإعدادات",
+    },
+    {
+      path: "/whatWeDo",
+      icon: IconSettings,
+      text: t("what_we_do"),
     },
   ];
 
   const renderMainMenu = () =>
     isMobileOrTablet ? (
-      <Menu shadow="md" width={200}>
+      <Menu
+        shadow="md"
+        width={200}
+        styles={{
+          dropdown: {
+            zIndex: 1001,
+            backdropFilter: "none",
+          },
+        }}
+      >
         <Menu.Target>
           <Button
             size="12"
@@ -190,7 +204,16 @@ const MenuComponent = () => {
 
   const renderAccountMenu = () =>
     isMobileOrTablet ? (
-      <Menu shadow="md" width={200}>
+      <Menu
+        shadow="md"
+        width={200}
+        styles={{
+          dropdown: {
+            zIndex: 1001,
+            backdropFilter: "none",
+          },
+        }}
+      >
         <Menu.Target>
           <Button
             size="12"
@@ -267,16 +290,24 @@ const MenuComponent = () => {
   return (
     <Box
       component="nav"
-      style={{
+      style={(theme) => ({
         position: "fixed",
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: "transparent",
-        backdropFilter: "blur(4px)",
-        padding: "1rem",
-      }}
+        padding: theme.spacing.xs,
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backdropFilter: "blur(4px)",
+          zIndex: -1,
+        },
+      })}
     >
       <Flex
         align="center"
@@ -311,10 +342,10 @@ const MenuComponent = () => {
             style={{ flexShrink: 0 }}
           >
             <Image
-              src="/images/transperent-logo.png"
+              src="/images/transperent-white-logo.png"
               alt="Logo"
-              w={70}
-              h={70}
+              w={90}
+              h={90}
               style={{ cursor: "pointer" }}
               onClick={() => router.push(`/${currentLang}/`)}
               onMouseEnter={playHoverSound}
@@ -324,10 +355,10 @@ const MenuComponent = () => {
 
         {isRTL ? (
           <Image
-            src="/images/transperent-logo.png"
+            src="/images/transperent-white-logo.png"
             alt="Logo"
-            w={70}
-            h={70}
+            w={90}
+            h={90}
             style={{ cursor: "pointer" }}
             onClick={() => router.push(`/${currentLang}/`)}
             onMouseEnter={playHoverSound}

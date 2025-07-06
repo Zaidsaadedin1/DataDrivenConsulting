@@ -27,7 +27,7 @@ const fadeIn = keyframes({
   to: { opacity: 1, transform: "translateY(0)" },
 });
 
-export default function ConsultationForm() {
+export default function DataConsulting() {
   const router = useRouter();
   const { t, i18n } = useTranslation("appointments");
   const currentLang = i18n.language;

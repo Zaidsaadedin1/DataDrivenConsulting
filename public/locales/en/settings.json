@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Settings | DataDriven Consulting",
+    "description": "Manage your account settings and preferences"
+  },
+  "title": "Settings",
+  "account": {
+    "title": "Account",
+    "section_title": "Account Settings",
+    "email_notifications": "Email Notifications",
+    "two_factor_auth": "Two-Factor Authentication",
+    "activity_reports": "Monthly Activity Reports"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "section_title": "Notification Preferences",
+    "description": "Configure how you receive notifications from our platform",
+    "coming_soon": "Notification settings will be available in the next update"
+  },
+  "language": {
+    "title": "Language",
+    "section_title": "Language Preferences",
+    "description": "Change your preferred display language",
+    "coming_soon": "Language selection will be available in the next update"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "section_title": "Privacy Settings",
+    "data_collection": "Allow Data Collection",
+    "personalized_ads": "Personalized Advertisements",
+    "location_tracking": "Location Tracking"
+  }
+}
