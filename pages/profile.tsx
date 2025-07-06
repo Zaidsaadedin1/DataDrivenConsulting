@@ -4,7 +4,7 @@ import Profile from "../app/components/Profile/Profile";
 import { checkAuth } from "../checkIsAuthMiddleware";
 import userController from "../app/Apis/controllers/userController";
 import i18nConfig from "../next-i18next.config";
-import appointmentController from "../app/Apis/controllers/appointmentControllers";
+import consultationController from "../app/Apis/controllers/consultationController";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { locale } = context;
@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   const user = (await userController.getUserById(authCheck.user?.id)).data;
   const userAppointments = (
-    await appointmentController.GetAllUserAppointmentAsync(authCheck.user!.id)
+    await consultationController.GetAllUserAppointmentAsync(authCheck.user!.id)
   ).data;
 
   return {

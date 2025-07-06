@@ -1,4 +1,4 @@
-export enum AppointmentStatus {
+export enum ConsultationStatus {
   Pending,
   Confirmed,
   Completed,

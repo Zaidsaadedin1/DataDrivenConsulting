@@ -1,5 +1,36 @@
 {
   "title": "الملف الشخصي",
+  "consultations": {
+    "title": "استشاراتي",
+    "no_consultations": "لا توجد استشارات",
+    "fields": {
+      "id": "المعرف",
+      "service": "الخدمة",
+      "projectType": "نوع المشروع",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "status": "الحالة",
+      "createdAt": "تاريخ الإنشاء",
+      "details": "التفاصيل"
+    },
+    "services": {
+      "business_consultation": "استشارة أعمال",
+      "marketing_consultation": "استشارة تسويقية",
+      "financial_consultation": "استشارة مالية"
+    },
+    "projectTypes": {
+      "startup": "شركة ناشئة",
+      "small_business": "عمل صغير",
+      "medium_business": "عمل متوسط",
+      "large_business": "عمل كبير",
+      "personal_project": "مشروع شخصي"
+    },
+    "times": {
+      "morning": "الصباح",
+      "afternoon": "بعد الظهر",
+      "evening": "المساء"
+    }
+  },
   "fields": {
     "username": "اسم المستخدم",
     "email": "البريد الإلكتروني",
@@ -7,6 +38,7 @@
     "lastName": "الاسم الأخير",
     "birthDate": "تاريخ الميلاد",
     "phoneNumber": "رقم الهاتف",
+    "gender": "الجنس",
     "bio": "السيرة الذاتية",
     "occupation": "المهنة",
     "location": "الموقع",
@@ -17,35 +49,22 @@
       "gender": "الجنس"
     },
     "placeholders": {
-      "gender": "اختر الجنس"
+      "gender": "اختر جنسك"
     },
     "male": "ذكر",
     "female": "أنثى",
     "nonbinary": "غير ثنائي",
-    "transgender": "متحول جنسي",
-    "genderqueer": "كويري",
+    "transgender": "عابر جنسياً",
+    "genderqueer": "كويري الجندر",
     "agender": "عديم الجنس",
     "other": "آخر",
-    "prefer_not_to_say": "أفضل عدم الإجابة"
+    "prefer_not_to_say": "أفضل عدم الإفصاح"
   },
   "placeholders": {
-    "interests": "أضف اهتماماتك مفصولة بفواصل"
+    "interests": "أضف اهتماماتك واضغط إدخال"
   },
   "buttons": {
     "edit": "حفظ التغييرات"
-  },
-  "table": {
-    "id": "الرقم",
-    "firstName": "الاسم الأول",
-    "lastName": "الاسم الأخير",
-    "email": "البريد الإلكتروني",
-    "phone": "الهاتف",
-    "serviceType": "نوع الخدمة",
-    "preferredDate": "التاريخ المفضل",
-    "preferredTime": "الوقت المفضل",
-    "concerns": "المخاوف",
-    "status": "الحالة",
-    "no_appointments": "لا توجد مواعيد"
   },
   "validation": {
     "user_Name_required": "اسم المستخدم مطلوب",
@@ -61,39 +80,13 @@
     "success_title": "نجاح",
     "error_title": "خطأ",
     "profile_updated": "تم تحديث الملف الشخصي بنجاح",
-    "error_updating_profile": "خطأ في تحديث الملف الشخصي"
+    "error_updating_profile": "حدث خطأ أثناء تحديث الملف الشخصي"
   },
   "status": {
-    "Pending": "قيد الانتظار",
-    "Confirmed": "تم التأكيد",
-    "Completed": "مكتمل",
-    "Cancelled": "ملغى",
-    "NoShow": "لم يحضر"
-  },
-
-  "appointments": {
-    "title": "مواعيدي",
-    "details_title": "تفاصيل الموعد",
-    "no_appointments": "لا توجد مواعيد.",
-    "fields": {
-      "id": "رقم",
-      "service": "الخدمة",
-      "propertyType": "نوع العقار",
-      "date": "التاريخ المفضل",
-      "time": "الوقت المفضل",
-      "status": "الحالة",
-      "actions": "الإجراءات",
-      "projectDetails": "تفاصيل المشروع",
-      "createdAt": "تاريخ الإنشاء"
-    },
-    "services": {
-      "kitchen_renovation": "ترميم المطابخ",
-      "bathroom_remodeling": "تجديد الحمامات",
-      "interior_design": "التصميم الداخلي",
-      "painting_services": "خدمات الدهان",
-      "commercial_renovation": "ترميم تجاري",
-      "general_contracting": "مقاول عام"
-    }
-  },
-  "adminDashboard": "لوحة المسؤول"
+    "pending": "قيد الانتظار",
+    "approved": "تم الموافقة",
+    "rejected": "مرفوض",
+    "completed": "مكتمل",
+    "cancelled": "ملغى"
+  }
 }

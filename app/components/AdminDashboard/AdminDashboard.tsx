@@ -18,18 +18,18 @@ import {
 import { IconSearch, IconUser, IconCalendarEvent } from "@tabler/icons-react";
 import { useTranslation } from "next-i18next";
 import { GetUserDto } from "../../Apis/types/userDtos/userDtos";
-import { GetAppointmentForAdminDto } from "../../Apis/types/appointmentDtos/appointmentDtos";
-import { AppointmentStatus } from "../../Apis/enums/AppointmentStatus";
+import { ConsultationStatus } from "../../Apis/enums/ConsultationStatus";
+import { GetConsultationForAdminDto } from "../../Apis/types/consultationDtos/consultationDtos";
 
 type AdminDashboardProps = {
   users: GetUserDto[];
-  appointments: GetAppointmentForAdminDto[];
+  consultations: GetConsultationForAdminDto[];
   loading?: boolean;
 };
 
 function AdminDashboard({
   users = [],
-  appointments = [],
+  consultations = [],
   loading = false,
 }: AdminDashboardProps) {
   const { t } = useTranslation("adminDashboard");
@@ -49,16 +49,16 @@ function AdminDashboard({
     );
   });
 
-  // Filter appointments
-  const filteredAppointments = appointments.filter((appointment) => {
+  // Filter consultations
+  const filteredAppointments = consultations.filter((consultation) => {
     const searchTerm = searchAppointment.toLowerCase();
     return (
-      `${appointment.firstName} ${appointment.lastName}`
+      `${consultation.firstName} ${consultation.lastName}`
         .toLowerCase()
         .includes(searchTerm) ||
-      appointment.serviceType.toLowerCase().includes(searchTerm) ||
-      appointment.propertyType?.toLowerCase().includes(searchTerm) ||
-      appointment.status.toString().toLowerCase().includes(searchTerm)
+      consultation.serviceType.toLowerCase().includes(searchTerm) ||
+      consultation.businessType?.toLowerCase().includes(searchTerm) ||
+      consultation.status.toString().toLowerCase().includes(searchTerm)
     );
   });
 
@@ -68,7 +68,7 @@ function AdminDashboard({
     usersPage * itemsPerPage
   );
 
-  // Paginate appointments
+  // Paginate Consultations
   const paginatedAppointments = filteredAppointments.slice(
     (appointmentsPage - 1) * itemsPerPage,
     appointmentsPage * itemsPerPage
@@ -77,11 +77,11 @@ function AdminDashboard({
   // Statistics
   const stats = {
     totalUsers: users.length,
-    totalAppointments: appointments.length,
-    upcomingAppointments: appointments.filter(
+    totalConsultations: consultations.length,
+    upcomingConsultations: consultations.filter(
       (a) =>
         new Date(a.preferredDate) > new Date() &&
-        a.status === AppointmentStatus.Confirmed
+        a.status === ConsultationStatus.Confirmed
     ).length,
     newUsersThisMonth: users.filter(
       (user) =>
@@ -127,7 +127,7 @@ function AdminDashboard({
                 {t("stats.totalAppointments")}
               </Text>
               <Text size="xl" fw={500}>
-                {stats.totalAppointments}
+                {stats.totalConsultations}
               </Text>
             </div>
           </Group>
@@ -141,7 +141,7 @@ function AdminDashboard({
                 {t("stats.upcomingAppointments")}
               </Text>
               <Text size="xl" fw={500}>
-                {stats.upcomingAppointments}
+                {stats.upcomingConsultations}
               </Text>
             </div>
           </Group>
@@ -218,12 +218,12 @@ function AdminDashboard({
         />
       </Paper>
 
-      {/* Appointments Table */}
+      {/* consultations Table */}
       <Paper p="md" shadow="sm" withBorder>
         <Group justify="space-between" mb="md">
-          <Title order={3}>{t("appointments.title")}</Title>
+          <Title order={3}>{t("consultations.title")}</Title>
           <TextInput
-            placeholder={t("appointments.searchPlaceholder")}
+            placeholder={t("consultations.searchPlaceholder")}
             leftSection={<IconSearch size={16} />}
             value={searchAppointment}
             onChange={(e) => setSearchAppointment(e.currentTarget.value)}
@@ -235,16 +235,16 @@ function AdminDashboard({
           <Table striped highlightOnHover>
             <Table.Thead>
               <Table.Tr>
-                <Table.Th>{t("appointments.fields.client")}</Table.Th>
-                <Table.Th>{t("appointments.fields.email")}</Table.Th>
-                <Table.Th>{t("appointments.fields.phone")}</Table.Th>
-                <Table.Th>{t("appointments.fields.service")}</Table.Th>
-                <Table.Th>{t("appointments.fields.propertyType")}</Table.Th>
-                <Table.Th>{t("appointments.fields.date")}</Table.Th>
-                <Table.Th>{t("appointments.fields.time")}</Table.Th>
-                <Table.Th>{t("appointments.fields.status")}</Table.Th>
-                <Table.Th>{t("appointments.fields.projectDetails")}</Table.Th>
-                <Table.Th>{t("appointments.fields.createdAt")}</Table.Th>
+                <Table.Th>{t("consultations.fields.client")}</Table.Th>
+                <Table.Th>{t("consultations.fields.email")}</Table.Th>
+                <Table.Th>{t("consultations.fields.phone")}</Table.Th>
+                <Table.Th>{t("consultations.fields.service")}</Table.Th>
+                <Table.Th>{t("consultations.fields.propertyType")}</Table.Th>
+                <Table.Th>{t("consultations.fields.date")}</Table.Th>
+                <Table.Th>{t("consultations.fields.time")}</Table.Th>
+                <Table.Th>{t("consultations.fields.status")}</Table.Th>
+                <Table.Th>{t("consultations.fields.projectDetails")}</Table.Th>
+                <Table.Th>{t("consultations.fields.createdAt")}</Table.Th>
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
@@ -257,7 +257,7 @@ function AdminDashboard({
                     <Table.Td>
                       {t(`services.${appointment.serviceType}`)}
                     </Table.Td>
-                    <Table.Td>{appointment.propertyType || "-"}</Table.Td>
+                    <Table.Td>{appointment.businessType || "-"}</Table.Td>
                     <Table.Td>
                       {new Date(appointment.preferredDate).toLocaleDateString()}
                     </Table.Td>
@@ -265,9 +265,9 @@ function AdminDashboard({
                     <Table.Td>
                       <Badge
                         color={
-                          appointment.status === AppointmentStatus.Confirmed
+                          appointment.status === ConsultationStatus.Confirmed
                             ? "green"
-                            : appointment.status === AppointmentStatus.Pending
+                            : appointment.status === ConsultationStatus.Pending
                             ? "yellow"
                             : "red"
                         }
@@ -275,7 +275,7 @@ function AdminDashboard({
                         {t(`status.${appointment.status}`)}
                       </Badge>
                     </Table.Td>
-                    <Table.Td>{appointment.projectDetails}</Table.Td>
+                    <Table.Td>{appointment.businessNeeds}</Table.Td>
                     <Table.Td>
                       {new Date(appointment.createdAt).toLocaleString()}
                     </Table.Td>
@@ -284,7 +284,7 @@ function AdminDashboard({
               ) : (
                 <Table.Tr>
                   <Table.Td colSpan={10} style={{ textAlign: "center" }}>
-                    <Text c="dimmed">{t("appointments.noAppointments")}</Text>
+                    <Text c="dimmed">{t("consultations.noAppointments")}</Text>
                   </Table.Td>
                 </Table.Tr>
               )}

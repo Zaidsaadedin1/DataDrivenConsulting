@@ -1,72 +1,63 @@
 {
-  "title": "طلب استشارة مجانية",
-  "subtitle": "املأ النموذج أدناه لجدولة استشارة الترميم المنزلي المجانية مع خبراء مكانكم",
+  "title": "طلب استشارة البيانات",
+  "subtitle": "املأ النموذج أدناه لجدولة استشارة مع خبراء البيانات لدينا",
 
   "sections": {
     "personal_info": "المعلومات الشخصية",
-    "project_info": "معلومات المشروع"
+    "consulting_info": "معلومات الاستشارة"
   },
 
   "fields": {
     "firstName": "الاسم الأول",
     "lastName": "الاسم الأخير",
-    "phone": "رقم الهاتف",
     "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
     "serviceType": "نوع الخدمة",
-    "propertyType": "نوع العقار",
+    "businessType": "نوع العمل",
     "preferredDate": "التاريخ المفضل",
     "preferredTime": "الوقت المفضل",
-    "projectDetails": "تفاصيل المشروع"
+    "businessNeeds": "احتياجات عملك",
+    "details": "التفاصيل",
+    "projectType": "نوع المشروع"
   },
 
   "placeholders": {
     "firstName": "أدخل اسمك الأول",
     "lastName": "أدخل اسمك الأخير",
+    "email": "أدخل عنوان بريدك الإلكتروني",
     "phone": "أدخل رقم هاتفك",
-    "email": "أدخل بريدك الإلكتروني",
-    "serviceType": "اختر نوع الخدمة",
-    "propertyType": "اختر نوع العقار",
-    "preferredDate": "اختر التاريخ المفضل",
-    "preferredTime": "اختر الوقت المفضل",
-    "projectDetails": "صف مشروعك بالتفصيل"
+    "serviceType": "اختر خدمة",
+    "businessType": "اختر نوع عملك",
+    "preferredDate": "اختر تاريخًا",
+    "preferredTime": "اختر وقتًا",
+    "businessNeeds": "صف احتياجات عملك والتحديات التي تواجهها"
   },
 
   "services": {
-    "kitchen_renovation": "ترميم المطابخ",
-    "bathroom_remodeling": "تجديد الحمامات",
-    "interior_design": "التصميم الداخلي",
-    "painting_services": "خدمات الدهان",
-    "commercial_renovation": "ترميم تجاري",
-    "general_contracting": "مقاول عام"
+    "data_strategy": "استراتيجية البيانات",
+    "business_intelligence": "ذكاء الأعمال",
+    "data_analytics": "تحليل البيانات",
+    "ai_solutions": "حلول الذكاء الاصطناعي",
+    "data_governance": "حوكمة البيانات",
+    "digital_transformation": "التحول الرقمي"
   },
 
-  "propertyTypes": {
-    "apartment": "شقة",
-    "villa": "فيلا",
-    "office": "مكتب",
-    "commercial": "مساحة تجارية",
-    "other": "أخرى"
+  "businessTypes": {
+    "startup": "شركة ناشئة",
+    "sme": "شركة صغيرة/متوسطة",
+    "enterprise": "شركة كبيرة",
+    "government": "حكومي",
+    "non_profit": "غير ربحي"
   },
 
   "times": {
     "morning": "الصباح (9 ص - 12 م)",
-    "afternoon": "بعد الظهر (12 م - 4 م)",
-    "evening": "المساء (4 م - 7 م)"
+    "afternoon": "بعد الظهر (1 م - 5 م)",
+    "evening": "المساء (6 م - 9 م)"
   },
 
-  "validation": {
-    "firstName_required": "الاسم الأول مطلوب",
-    "lastName_required": "الاسم الأخير مطلوب",
-    "email_required": "البريد الإلكتروني مطلوب",
-    "email_invalid": "الرجاء إدخال بريد إلكتروني صحيح",
-    "phone_required": "رقم الهاتف مطلوب",
-    "phone_invalid": "الرجاء إدخال رقم هاتف صحيح",
-    "serviceType_required": "نوع الخدمة مطلوب",
-    "date_required": "التاريخ المفضل مطلوب",
-    "time_required": "الوقت المفضل مطلوب",
-    "projectDetails_min": "يجب أن تكون تفاصيل المشروع 10 أحرف على الأقل",
-    "projectDetails_max": "يجب ألا تتجاوز تفاصيل المشروع 1000 حرف",
-    "terms_required": "يجب الموافقة على الشروط والأحكام"
+  "buttons": {
+    "submit": "طلب استشارة"
   },
 
   "links": {
@@ -76,14 +67,26 @@
     "privacy": "سياسة الخصوصية"
   },
 
-  "buttons": {
-    "submit": "طلب استشارة"
+  "validation": {
+    "firstName_required": "الاسم الأول مطلوب",
+    "lastName_required": "الاسم الأخير مطلوب",
+    "email_required": "البريد الإلكتروني مطلوب",
+    "email_invalid": "بريد إلكتروني غير صالح",
+    "phone_required": "رقم الهاتف مطلوب",
+    "phone_invalid": "رقم هاتف غير صالح",
+    "serviceType_required": "نوع الخدمة مطلوب",
+    "businessType_required": "نوع العمل مطلوب",
+    "date_required": "التاريخ المفضل مطلوب",
+    "time_required": "الوقت المفضل مطلوب",
+    "businessNeeds_min": "الرجاء إدخال 10 أحرف على الأقل",
+    "businessNeeds_max": "الحد الأقصى 1000 حرف مسموح به",
+    "terms_required": "يجب أن توافق على الشروط"
   },
 
   "notifications": {
-    "success_title": "تم إرسال الطلب",
-    "success_message": "تم استلام طلب الاستشارة الخاص بك. سنتواصل معك قريبًا.",
+    "success_title": "تم بنجاح!",
+    "success_message": "تم تقديم طلب الاستشارة الخاص بك",
     "error_title": "خطأ",
-    "error_message": "حدث خطأ أثناء إرسال طلبك. يرجى المحاولة مرة أخرى."
+    "error_message": "فشل في تقديم الطلب. يرجى المحاولة مرة أخرى."
   }
 }

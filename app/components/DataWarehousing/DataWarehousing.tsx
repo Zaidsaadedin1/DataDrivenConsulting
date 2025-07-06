@@ -47,7 +47,7 @@ const DataWarehousing = () => {
   const benefits = t("benefits.items", { returnObjects: true }) as string[];
 
   return (
-    <Stack mt={"50"}>
+    <Stack pt={80}>
       <Head>
         <title>{t("meta.title")}</title>
         <meta name="description" content={t("meta.description")} />

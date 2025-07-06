@@ -14,20 +14,25 @@ import {
 } from "@mantine/core";
 import { z } from "zod";
 import { useForm } from "@mantine/form";
-import { IconUser, IconMail, IconHome, IconTools } from "@tabler/icons-react";
+import {
+  IconUser,
+  IconMail,
+  IconChartLine,
+  IconBriefcase,
+} from "@tabler/icons-react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { keyframes } from "@emotion/react";
 import { showNotification } from "@mantine/notifications";
 import { useAuth } from "../../contexts/AuthContext";
-import appointmentController from "../../Apis/controllers/appointmentControllers";
+import appointmentController from "../../Apis/controllers/consultationController";
 
 const fadeIn = keyframes({
   from: { opacity: 0, transform: "translateY(20px)" },
   to: { opacity: 1, transform: "translateY(0)" },
 });
 
-export default function DataConsulting() {
+export default function ConsultingRequest() {
   const router = useRouter();
   const { t, i18n } = useTranslation("dataConsulting");
   const currentLang = i18n.language;
@@ -50,17 +55,19 @@ export default function DataConsulting() {
     serviceType: z
       .string()
       .min(1, { message: t("validation.serviceType_required") }),
+    businessType: z
+      .string()
+      .min(1, { message: t("validation.businessType_required") }),
     preferredDate: z
       .string()
       .min(1, { message: t("validation.date_required") }),
     preferredTime: z
       .string()
       .min(1, { message: t("validation.time_required") }),
-    projectDetails: z
+    businessNeeds: z
       .string()
-      .min(10, { message: t("validation.projectDetails_min") })
-      .max(1000, { message: t("validation.projectDetails_max") }),
-    propertyType: z.string().optional(),
+      .min(10, { message: t("validation.businessNeeds_min") })
+      .max(1000, { message: t("validation.businessNeeds_max") }),
     termsAccepted: z.boolean().refine((value) => value === true, {
       message: t("validation.terms_required"),
     }),
@@ -74,10 +81,10 @@ export default function DataConsulting() {
       email: user?.email ?? "",
       phone: user?.phoneNumber ?? "",
       serviceType: "",
+      businessType: "",
       preferredDate: "",
       preferredTime: "",
-      projectDetails: "",
-      propertyType: "",
+      businessNeeds: "",
       termsAccepted: false,
     },
     validate: (values) => {
@@ -114,8 +121,8 @@ export default function DataConsulting() {
 
   const handleSubmit = async (values: typeof form.values) => {
     try {
-      const res = await appointmentController.CreateAppointmentAsync(values);
-      console.log(res);
+      const res = await appointmentController.CreateConsultationAsync(values);
+
       if (res.success) {
         showNotification({
           title: t("notifications.success_title"),
@@ -142,23 +149,26 @@ export default function DataConsulting() {
   };
 
   const serviceOptions = [
-    { value: "kitchen_renovation", label: t("services.kitchen_renovation") },
-    { value: "bathroom_remodeling", label: t("services.bathroom_remodeling") },
-    { value: "interior_design", label: t("services.interior_design") },
-    { value: "painting_services", label: t("services.painting_services") },
+    { value: "data_strategy", label: t("services.data_strategy") },
     {
-      value: "commercial_renovation",
-      label: t("services.commercial_renovation"),
+      value: "business_intelligence",
+      label: t("services.business_intelligence"),
     },
-    { value: "general_contracting", label: t("services.general_contracting") },
+    { value: "data_analytics", label: t("services.data_analytics") },
+    { value: "ai_solutions", label: t("services.ai_solutions") },
+    { value: "data_governance", label: t("services.data_governance") },
+    {
+      value: "digital_transformation",
+      label: t("services.digital_transformation"),
+    },
   ];
 
-  const propertyOptions = [
-    { value: "apartment", label: t("propertyTypes.apartment") },
-    { value: "villa", label: t("propertyTypes.villa") },
-    { value: "office", label: t("propertyTypes.office") },
-    { value: "commercial", label: t("propertyTypes.commercial") },
-    { value: "other", label: t("propertyTypes.other") },
+  const businessTypeOptions = [
+    { value: "startup", label: t("businessTypes.startup") },
+    { value: "sme", label: t("businessTypes.sme") },
+    { value: "enterprise", label: t("businessTypes.enterprise") },
+    { value: "government", label: t("businessTypes.government") },
+    { value: "non_profit", label: t("businessTypes.non_profit") },
   ];
 
   const timeOptions = [
@@ -249,7 +259,7 @@ export default function DataConsulting() {
         </Grid>
 
         <Divider
-          label={t("sections.project_info")}
+          label={t("sections.consulting_info")}
           labelPosition="center"
           mt="xl"
           mb="md"
@@ -264,17 +274,18 @@ export default function DataConsulting() {
               mb="md"
               required
               {...form.getInputProps("serviceType")}
-              leftSection={<IconTools size={16} />}
+              leftSection={<IconChartLine size={16} />}
             />
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 6 }}>
             <Select
-              label={t("fields.propertyType")}
-              placeholder={t("placeholders.propertyType")}
-              data={propertyOptions}
+              label={t("fields.businessType")}
+              placeholder={t("placeholders.businessType")}
+              data={businessTypeOptions}
               mb="md"
-              {...form.getInputProps("propertyType")}
-              leftSection={<IconHome size={16} />}
+              required
+              {...form.getInputProps("businessType")}
+              leftSection={<IconBriefcase size={16} />}
             />
           </Grid.Col>
         </Grid>
@@ -302,12 +313,12 @@ export default function DataConsulting() {
         </Grid>
 
         <Textarea
-          label={t("fields.projectDetails")}
-          placeholder={t("placeholders.projectDetails")}
+          label={t("fields.businessNeeds")}
+          placeholder={t("placeholders.businessNeeds")}
           minRows={4}
           mb="md"
           required
-          {...form.getInputProps("projectDetails")}
+          {...form.getInputProps("businessNeeds")}
         />
 
         <Checkbox

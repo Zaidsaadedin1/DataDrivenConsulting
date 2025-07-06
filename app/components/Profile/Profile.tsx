@@ -14,6 +14,7 @@ import {
   TagsInput,
   TextInput,
   ScrollArea,
+  Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { z } from "zod";
@@ -32,16 +33,16 @@ import { useMutation } from "@tanstack/react-query";
 import userController from "../../Apis/controllers/userController";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { GetAppointmentDto } from "../../Apis/types/appointmentDtos/appointmentDtos";
-import { statusColors } from "../../Apis/enums/AppointmentStatus";
+import { GetConsultationDto } from "../../Apis/types/consultationDtos/consultationDtos";
+import { statusColors } from "../../Apis/enums/ConsultationStatus";
 import { DatePickerInput } from "@mantine/dates";
 
 const Profile = ({
   user,
-  userAppointments,
+  userConsultations = [],
 }: {
   user: GetUserDto;
-  userAppointments: GetAppointmentDto[];
+  userConsultations?: GetConsultationDto[];
 }) => {
   const { t } = useTranslation("profile");
   const router = useRouter();
@@ -197,7 +198,6 @@ const Profile = ({
     });
   };
 
-  console.log(userAppointments);
   return (
     <Stack mt={"50"}>
       {updateUserDataMutation.isPending ? (
@@ -323,51 +323,55 @@ const Profile = ({
 
           <Card shadow="sm" padding="lg" radius="md" withBorder>
             <Title order={2} mb="md">
-              {t("appointments.title")}
+              {t("consultations.title")}
             </Title>
             <ScrollArea>
               <TableScrollContainer minWidth={800}>
                 <Table verticalSpacing="md" striped highlightOnHover>
                   <Table.Thead>
                     <Table.Tr>
-                      <Table.Th>{t("appointments.fields.id")}</Table.Th>
-                      <Table.Th>{t("appointments.fields.service")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.id")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.service")}</Table.Th>
                       <Table.Th>
-                        {t("appointments.fields.propertyType")}
+                        {t("consultations.fields.projectType")}
                       </Table.Th>
-                      <Table.Th>{t("appointments.fields.date")}</Table.Th>
-                      <Table.Th>{t("appointments.fields.time")}</Table.Th>
-                      <Table.Th>{t("appointments.fields.status")}</Table.Th>
-                      <Table.Th>{t("appointments.fields.createdAt")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.date")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.time")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.status")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.createdAt")}</Table.Th>
+                      <Table.Th>{t("consultations.fields.details")}</Table.Th>
                     </Table.Tr>
                   </Table.Thead>
                   <Table.Tbody>
-                    {userAppointments.length > 0 ? (
-                      userAppointments.map((appointment) => {
-                        // appointment.status is a string like "Pending", "Confirmed", etc.
-                        const statusString = appointment.status;
+                    {userConsultations.length > 0 ? (
+                      userConsultations.map((consultation) => {
+                        const statusString = consultation.status;
                         const badgeColor = statusColors[statusString] || "gray";
 
                         return (
-                          <Table.Tr key={appointment.id}>
-                            <Table.Td>{appointment.id}</Table.Td>
+                          <Table.Tr key={consultation.id}>
+                            <Table.Td>{consultation.id}</Table.Td>
                             <Table.Td>
                               {t(
-                                `appointments.services.${appointment.serviceType}`
+                                `consultations.services.${consultation.serviceType}`
                               )}
                             </Table.Td>
                             <Table.Td>
-                              {appointment.propertyType || "-"}
+                              {t(
+                                `consultations.projectTypes.${consultation.businessType}`
+                              )}
                             </Table.Td>
                             <Table.Td>
-                              {appointment.preferredDate
+                              {consultation.preferredDate
                                 ? new Date(
-                                    appointment.preferredDate
+                                    consultation.preferredDate
                                   ).toLocaleDateString()
                                 : "-"}
                             </Table.Td>
                             <Table.Td>
-                              {appointment.preferredTime || "-"}
+                              {t(
+                                `consultations.times.${consultation.preferredTime}`
+                              )}
                             </Table.Td>
                             <Table.Td>
                               <Badge color={badgeColor}>
@@ -375,19 +379,24 @@ const Profile = ({
                               </Badge>
                             </Table.Td>
                             <Table.Td>
-                              {appointment.createdAt
+                              {consultation.createdAt
                                 ? new Date(
-                                    appointment.createdAt
+                                    consultation.createdAt
                                   ).toLocaleString()
                                 : "-"}
+                            </Table.Td>
+                            <Table.Td>
+                              <Text lineClamp={2} style={{ maxWidth: 200 }}>
+                                {consultation.businessNeeds || "-"}
+                              </Text>
                             </Table.Td>
                           </Table.Tr>
                         );
                       })
                     ) : (
                       <Table.Tr>
-                        <Table.Td colSpan={7} style={{ textAlign: "center" }}>
-                          {t("appointments.no_appointments")}
+                        <Table.Td colSpan={8} style={{ textAlign: "center" }}>
+                          {t("consultations.no_consultations")}
                         </Table.Td>
                       </Table.Tr>
                     )}

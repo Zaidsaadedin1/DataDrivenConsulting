@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Group, Text, Image, Menu, Flex, Box } from "@mantine/core";
 import {
   IconLogin,
@@ -16,18 +16,12 @@ import { useRouter } from "next/router";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useAuth } from "../../contexts/AuthContext";
 import { SoundToggle } from "../SoundToggle/SoundToggle";
-
-// Hover sound utility
-const playHoverSound = () => {
-  const audio = new Audio("/audio/hover.mp3");
-  audio.volume = 0.3;
-  audio.play().catch((e) => console.log("Hover sound prevented:", e));
-};
-
+import { playHoverSound } from "../playHoverSound";
 const MenuComponent = () => {
   const { t, i18n } = useTranslation("menuComponent");
   const currentLang = i18n.language;
   const isRTL = currentLang === "ar";
+  const [scrolled, setScrolled] = useState(false);
 
   const router = useRouter();
   const { isAuthenticated, user, logout } = useAuth();
@@ -35,6 +29,18 @@ const MenuComponent = () => {
   const isMobileOrTablet = useMediaQuery("(max-width: 1200px)");
   const isSmallMobile = useMediaQuery("(max-width: 480px)");
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrolled]);
 
   const renderAuthMenu = () => (
     <Menu
@@ -290,13 +296,14 @@ const MenuComponent = () => {
   return (
     <Box
       component="nav"
-      style={(theme) => ({
+      style={{
         position: "fixed",
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
-        padding: theme.spacing.xs,
+        padding: 0,
+        margin: 0,
         "&::before": {
           content: '""',
           position: "absolute",
@@ -307,22 +314,23 @@ const MenuComponent = () => {
           backdropFilter: "blur(4px)",
           zIndex: -1,
         },
-      })}
+      }}
     >
       <Flex
         align="center"
         justify="space-between"
         direction={isRTL ? "row-reverse" : "row"}
-        style={{
-          padding: isSmallMobile ? "0 8px" : isMobile ? "0 12px" : "0 16px",
+        style={(theme) => ({
+          padding: 0,
+          margin: 0,
           minHeight: isSmallMobile ? "48px" : isMobile ? "56px" : "64px",
-          backgroundColor: "transparent",
-        }}
-        mb={0}
+          backgroundColor: scrolled ? theme.colors.dark[7] : "transparent",
+        })}
+        p={0}
       >
         {isRTL ? (
           <Flex
-            align="center"
+            align="flex-start"
             gap={isSmallMobile ? "xs" : "sm"}
             direction={isRTL ? "row-reverse" : "row"}
             justify="flex-start"
@@ -342,11 +350,18 @@ const MenuComponent = () => {
             style={{ flexShrink: 0 }}
           >
             <Image
-              src="/images/transperent-white-logo.png"
+              src={
+                router.pathname !== "/" && !scrolled
+                  ? "/images/transperent-logo.png"
+                  : "/images/transperent-white-logo.png"
+              }
               alt="Logo"
               w={90}
               h={90}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                alignSelf: "flex-end",
+              }}
               onClick={() => router.push(`/${currentLang}/`)}
               onMouseEnter={playHoverSound}
             />
@@ -355,11 +370,18 @@ const MenuComponent = () => {
 
         {isRTL ? (
           <Image
-            src="/images/transperent-white-logo.png"
+            src={
+              router.pathname !== "/" && !scrolled
+                ? "/images/transperent-logo.png"
+                : "/images/transperent-white-logo.png"
+            }
             alt="Logo"
             w={90}
             h={90}
-            style={{ cursor: "pointer" }}
+            style={{
+              cursor: "pointer",
+              alignSelf: "flex-start",
+            }}
             onClick={() => router.push(`/${currentLang}/`)}
             onMouseEnter={playHoverSound}
           />

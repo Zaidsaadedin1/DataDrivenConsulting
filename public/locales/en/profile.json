@@ -1,5 +1,36 @@
 {
   "title": "Profile",
+  "consultations": {
+    "title": "My Consultations",
+    "no_consultations": "No consultations found",
+    "fields": {
+      "id": "ID",
+      "service": "Service",
+      "projectType": "Project Type",
+      "date": "Date",
+      "time": "Time",
+      "status": "Status",
+      "createdAt": "Created At",
+      "details": "Details"
+    },
+    "services": {
+      "business_consultation": "Business Consultation",
+      "marketing_consultation": "Marketing Consultation",
+      "financial_consultation": "Financial Consultation"
+    },
+    "projectTypes": {
+      "startup": "Startup",
+      "small_business": "Small Business",
+      "medium_business": "Medium Business",
+      "large_business": "Large Business",
+      "personal_project": "Personal Project"
+    },
+    "times": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    }
+  },
   "fields": {
     "username": "Username",
     "email": "Email",
@@ -7,6 +38,7 @@
     "lastName": "Last Name",
     "birthDate": "Birth Date",
     "phoneNumber": "Phone Number",
+    "gender": "Gender",
     "bio": "Bio",
     "occupation": "Occupation",
     "location": "Location",
@@ -17,7 +49,7 @@
       "gender": "Gender"
     },
     "placeholders": {
-      "gender": "Select gender"
+      "gender": "Select your gender"
     },
     "male": "Male",
     "female": "Female",
@@ -29,23 +61,10 @@
     "prefer_not_to_say": "Prefer not to say"
   },
   "placeholders": {
-    "interests": "Add interests separated by commas"
+    "interests": "Add interests and press enter"
   },
   "buttons": {
     "edit": "Save Changes"
-  },
-  "table": {
-    "id": "ID",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "email": "Email",
-    "phone": "Phone",
-    "serviceType": "Service Type",
-    "preferredDate": "Preferred Date",
-    "preferredTime": "Preferred Time",
-    "concerns": "Concerns",
-    "status": "Status",
-    "no_appointments": "No appointments found"
   },
   "validation": {
     "user_Name_required": "Username is required",
@@ -64,35 +83,10 @@
     "error_updating_profile": "Error updating profile"
   },
   "status": {
-    "Pending": "Pending",
-    "Confirmed": "Confirmed",
-    "Completed": "Completed",
-    "Cancelled": "Cancelled",
-    "NoShow": "No Show"
-  },
-  "appointments": {
-    "title": "My Appointments",
-    "details_title": "Appointment Details",
-    "no_appointments": "No appointments found.",
-    "fields": {
-      "id": "ID",
-      "service": "Service",
-      "propertyType": "Property Type",
-      "date": "Preferred Date",
-      "time": "Preferred Time",
-      "status": "Status",
-      "actions": "Actions",
-      "projectDetails": "Project Details",
-      "createdAt": "Created At"
-    },
-    "services": {
-      "kitchen_renovation": "Kitchen Renovation",
-      "bathroom_remodeling": "Bathroom Remodeling",
-      "interior_design": "Interior Design",
-      "painting_services": "Painting Services",
-      "commercial_renovation": "Commercial Renovation",
-      "general_contracting": "General Contracting"
-    }
-  },
-  "adminDashboard": "Admin Dashboard"
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  }
 }

@@ -1,8 +1,8 @@
 {
   "stats": {
     "totalUsers": "Total Users",
-    "totalAppointments": "Total Appointments",
-    "upcomingAppointments": "Upcoming Appointments",
+    "totalConsultations": "Total consultations",
+    "upcomingConsultations": "Upcoming consultations",
     "newUsersThisMonth": "New Users This Month"
   },
   "users": {
@@ -16,10 +16,10 @@
       "createdAt": "Created At"
     }
   },
-  "appointments": {
-    "title": "Appointments",
-    "searchPlaceholder": "Search appointments...",
-    "noAppointments": "No appointments found",
+  "consultation": {
+    "title": "Consultation",
+    "searchPlaceholder": "Search consultations...",
+    "noConsultations": "No consultations found",
     "viewDetails": "View Details",
     "edit": "Edit",
     "delete": "Delete",
@@ -44,11 +44,11 @@
     "Cancelled": "Cancelled"
   },
   "services": {
-    "kitchen_renovation": "Kitchen Renovation",
-    "bathroom_remodeling": "Bathroom Remodeling",
-    "interior_design": "Interior Design",
-    "painting_services": "Painting Services",
-    "commercial_renovation": "Commercial Renovation",
-    "general_contracting": "General Contracting"
+    "data_strategy": "Data Strategy",
+    "business_intelligence": "Business Intelligence",
+    "data_analytics": "Data Analytics",
+    "ai_solutions": "AI Solutions",
+    "data_governance": "Data Governance",
+    "digital_transformation": "Digital Transformation"
   }
 }

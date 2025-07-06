@@ -1,52 +1,53 @@
-import { AppointmentStatus } from "../../enums/AppointmentStatus";
+import { ConsultationStatus } from "../../enums/ConsultationStatus";
 
-export interface CreateAppointmentDto {
+export interface CreateConsultationDto {
   userId: string | null;
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
   serviceType: string;
-  propertyType?: string;
+  businessType: string;
   preferredDate: string;
   preferredTime: string;
-  projectDetails: string;
+  businessNeeds: string;
   termsAccepted: boolean;
+  status?: ConsultationStatus;
 }
 
-export interface GetAppointmentDto {
+export interface GetConsultationDto {
   id: number;
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
   serviceType: string;
-  propertyType?: string;
+  businessType: string;
   preferredDate: string;
   preferredTime: string;
-  projectDetails: string;
+  businessNeeds: string;
   termsAccepted: boolean;
   userId?: string;
-  status: AppointmentStatus;
+  status: ConsultationStatus;
   createdAt?: string;
   updatedAt?: string;
 }
 
-export interface GetAppointmentForAdminDto {
+export interface GetConsultationForAdminDto {
   id: number;
 
-  // Appointment Info
+  // Consultation Info
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
   serviceType: string;
-  propertyType?: string;
+  businessType: string;
   preferredDate: string;
   preferredTime: string;
-  projectDetails: string;
+  businessNeeds: string;
   termsAccepted: boolean;
-  status: AppointmentStatus;
+  status: ConsultationStatus;
   createdAt: string;
   updatedAt?: string;
 

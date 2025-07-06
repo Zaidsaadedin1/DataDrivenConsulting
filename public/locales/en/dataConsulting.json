@@ -1,72 +1,63 @@
 {
-  "title": "Request a Free Consultation",
-  "subtitle": "Fill out the form below to schedule your free home renovation consultation with Mbnakom experts",
+  "title": "Data Consulting Request",
+  "subtitle": "Fill out the form below to schedule a consultation with our data experts",
 
   "sections": {
     "personal_info": "Personal Information",
-    "project_info": "Project Information"
+    "consulting_info": "Consulting Information"
   },
 
   "fields": {
     "firstName": "First Name",
     "lastName": "Last Name",
+    "email": "Email",
     "phone": "Phone Number",
-    "email": "Email Address",
     "serviceType": "Service Type",
-    "propertyType": "Property Type",
+    "businessType": "Business Type",
     "preferredDate": "Preferred Date",
     "preferredTime": "Preferred Time",
-    "projectDetails": "Project Details"
+    "businessNeeds": "Your Business Needs",
+    "details": "Details",
+    "projectType": "Project Type"
   },
 
   "placeholders": {
     "firstName": "Enter your first name",
     "lastName": "Enter your last name",
-    "phone": "Enter your phone number",
     "email": "Enter your email address",
-    "serviceType": "Select service type",
-    "propertyType": "Select property type",
-    "preferredDate": "Select preferred date",
-    "preferredTime": "Select preferred time",
-    "projectDetails": "Describe your project in detail"
+    "phone": "Enter your phone number",
+    "serviceType": "Select a service",
+    "businessType": "Select your business type",
+    "preferredDate": "Select a date",
+    "preferredTime": "Select a time",
+    "businessNeeds": "Describe your business needs and challenges"
   },
 
   "services": {
-    "kitchen_renovation": "Kitchen Renovation",
-    "bathroom_remodeling": "Bathroom Remodeling",
-    "interior_design": "Interior Design",
-    "painting_services": "Painting Services",
-    "commercial_renovation": "Commercial Renovation",
-    "general_contracting": "General Contracting"
+    "data_strategy": "Data Strategy",
+    "business_intelligence": "Business Intelligence",
+    "data_analytics": "Data Analytics",
+    "ai_solutions": "AI Solutions",
+    "data_governance": "Data Governance",
+    "digital_transformation": "Digital Transformation"
   },
 
-  "propertyTypes": {
-    "apartment": "Apartment",
-    "villa": "Villa",
-    "office": "Office",
-    "commercial": "Commercial Space",
-    "other": "Other"
+  "businessTypes": {
+    "startup": "Startup",
+    "sme": "Small/Medium Business",
+    "enterprise": "Enterprise",
+    "government": "Government",
+    "non_profit": "Non-Profit"
   },
 
   "times": {
     "morning": "Morning (9AM - 12PM)",
-    "afternoon": "Afternoon (12PM - 4PM)",
-    "evening": "Evening (4PM - 7PM)"
+    "afternoon": "Afternoon (1PM - 5PM)",
+    "evening": "Evening (6PM - 9PM)"
   },
 
-  "validation": {
-    "firstName_required": "First name is required",
-    "lastName_required": "Last name is required",
-    "email_required": "Email is required",
-    "email_invalid": "Please enter a valid email",
-    "phone_required": "Phone number is required",
-    "phone_invalid": "Please enter a valid phone number",
-    "serviceType_required": "Service type is required",
-    "date_required": "Preferred date is required",
-    "time_required": "Preferred time is required",
-    "projectDetails_min": "Project details should be at least 10 characters",
-    "projectDetails_max": "Project details should not exceed 1000 characters",
-    "terms_required": "You must accept the terms and conditions"
+  "buttons": {
+    "submit": "Request Consultation"
   },
 
   "links": {
@@ -76,14 +67,26 @@
     "privacy": "Privacy Policy"
   },
 
-  "buttons": {
-    "submit": "Request Consultation"
+  "validation": {
+    "firstName_required": "First name is required",
+    "lastName_required": "Last name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Invalid email address",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Invalid phone number",
+    "serviceType_required": "Service type is required",
+    "businessType_required": "Business type is required",
+    "date_required": "Preferred date is required",
+    "time_required": "Preferred time is required",
+    "businessNeeds_min": "Please provide at least 10 characters",
+    "businessNeeds_max": "Maximum 1000 characters allowed",
+    "terms_required": "You must accept the terms"
   },
 
   "notifications": {
-    "success_title": "Request Submitted",
-    "success_message": "Your consultation request has been received. We'll contact you shortly.",
+    "success_title": "Success!",
+    "success_message": "Your consultation request has been submitted",
     "error_title": "Error",
-    "error_message": "There was an error submitting your request. Please try again."
+    "error_message": "Failed to submit request. Please try again."
   }
 }
