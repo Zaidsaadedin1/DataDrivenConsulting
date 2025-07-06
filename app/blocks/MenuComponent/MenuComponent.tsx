@@ -17,6 +17,13 @@ import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import { useAuth } from "../../contexts/AuthContext";
 import { SoundToggle } from "../SoundToggle/SoundToggle";
 
+// Hover sound utility
+const playHoverSound = () => {
+  const audio = new Audio("/audio/hover.mp3");
+  audio.volume = 0.3;
+  audio.play().catch((e) => console.log("Hover sound prevented:", e));
+};
+
 const MenuComponent = () => {
   const { t, i18n } = useTranslation("menuComponent");
   const currentLang = i18n.language;
@@ -32,7 +39,11 @@ const MenuComponent = () => {
   const renderAuthMenu = () => (
     <Menu>
       <Menu.Target>
-        <Button variant="subtle" ff="Oswald, sans-serif">
+        <Button
+          variant="subtle"
+          ff="Oswald, sans-serif"
+          onMouseEnter={playHoverSound}
+        >
           <Group
             gap={2}
             wrap="nowrap"
@@ -51,6 +62,7 @@ const MenuComponent = () => {
             onClick={() => router.push(`/${currentLang}/adminDashboard`)}
             style={{ direction: isRTL ? "rtl" : "ltr" }}
             ff="Oswald, sans-serif"
+            onMouseEnter={playHoverSound}
           >
             <Group gap={2}>
               <IconDashboard size={14} />
@@ -64,6 +76,7 @@ const MenuComponent = () => {
             onClick={() => router.push(`/${currentLang}/profile`)}
             style={{ direction: isRTL ? "rtl" : "ltr" }}
             ff="Oswald, sans-serif"
+            onMouseEnter={playHoverSound}
           >
             <Group gap={2} wrap="nowrap">
               <IconUser size={14} />
@@ -76,6 +89,7 @@ const MenuComponent = () => {
           onClick={logout}
           style={{ direction: isRTL ? "rtl" : "ltr" }}
           ff="Oswald, sans-serif"
+          onMouseEnter={playHoverSound}
         >
           <Group gap={2}>
             <IconLogout size={14} />
@@ -126,6 +140,7 @@ const MenuComponent = () => {
             variant="subtle"
             style={{ direction: isRTL ? "rtl" : "ltr" }}
             ff="Oswald, sans-serif"
+            onMouseEnter={playHoverSound}
           >
             {t("menu")}
           </Button>
@@ -136,6 +151,7 @@ const MenuComponent = () => {
               key={item.path}
               onClick={() => router.push(`/${currentLang}${item.path}`)}
               style={{ direction: isRTL ? "rtl" : "ltr" }}
+              onMouseEnter={playHoverSound}
             >
               <Group align="center">
                 <item.icon size={12} />
@@ -161,6 +177,7 @@ const MenuComponent = () => {
             variant="subtle"
             onClick={() => router.push(`/${currentLang}${item.path}`)}
             style={{ flexDirection: isRTL ? "row-reverse" : "row" }}
+            onMouseEnter={playHoverSound}
           >
             <Group align="center">
               <item.icon size={12} />
@@ -179,6 +196,7 @@ const MenuComponent = () => {
             size="12"
             variant="subtle"
             style={{ direction: isRTL ? "rtl" : "ltr" }}
+            onMouseEnter={playHoverSound}
           >
             {t("account")}
           </Button>
@@ -187,6 +205,7 @@ const MenuComponent = () => {
           <Menu.Item
             onClick={() => router.push(`/${currentLang}/signUp`)}
             style={{ direction: isRTL ? "rtl" : "ltr" }}
+            onMouseEnter={playHoverSound}
           >
             <Group align="center">
               <IconUser size={12} />
@@ -196,6 +215,7 @@ const MenuComponent = () => {
           <Menu.Item
             onClick={() => router.push(`/${currentLang}/login`)}
             style={{ direction: isRTL ? "rtl" : "ltr" }}
+            onMouseEnter={playHoverSound}
           >
             <Group align="center">
               <IconLogin size={12} />
@@ -220,6 +240,7 @@ const MenuComponent = () => {
             fontFamily: "Oswald, sans-serif",
             flexDirection: isRTL ? "row-reverse" : "row",
           }}
+          onMouseEnter={playHoverSound}
         >
           <Group align="center">
             <IconUser size={12} />
@@ -233,6 +254,7 @@ const MenuComponent = () => {
             fontFamily: "Oswald, sans-serif",
             flexDirection: isRTL ? "row-reverse" : "row",
           }}
+          onMouseEnter={playHoverSound}
         >
           <Group align="center">
             <IconLogin size={12} />
@@ -295,11 +317,11 @@ const MenuComponent = () => {
               h={70}
               style={{ cursor: "pointer" }}
               onClick={() => router.push(`/${currentLang}/`)}
+              onMouseEnter={playHoverSound}
             />
           </Flex>
         )}
 
-        {/* Right Side Actions */}
         {isRTL ? (
           <Image
             src="/images/transperent-logo.png"
@@ -308,6 +330,7 @@ const MenuComponent = () => {
             h={70}
             style={{ cursor: "pointer" }}
             onClick={() => router.push(`/${currentLang}/`)}
+            onMouseEnter={playHoverSound}
           />
         ) : (
           <Flex
@@ -319,7 +342,8 @@ const MenuComponent = () => {
           >
             {renderMainMenu()}
             {isAuthenticated ? renderAuthMenu() : renderAccountMenu()}
-            <LanguageSwitcher /> <SoundToggle />
+            <LanguageSwitcher />
+            <SoundToggle />
           </Flex>
         )}
       </Flex>
