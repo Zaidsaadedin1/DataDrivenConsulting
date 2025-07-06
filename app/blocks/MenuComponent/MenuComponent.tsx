@@ -125,9 +125,9 @@ const MenuComponent = () => {
       text: t("data_warehousing"),
     },
     {
-      path: "/settings",
+      path: "/dataServices",
       icon: IconSettings,
-      text: t("settings_directory"),
+      text: t("dataServices"),
     },
     {
       path: "/whatWeDo",
