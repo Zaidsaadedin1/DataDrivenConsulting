@@ -9,7 +9,12 @@ export const theme: MantineThemeOverride = {
   },
   components: {
     Menu: {
-      styles: (theme) => ({
+      styles: (theme: {
+        colors: { [x: string]: any[]; gray: any[] };
+        primaryColor: string | number;
+        black: any;
+        fontSizes: { sm: any };
+      }) => ({
         item: {
           fontFamily: "Oswald, sans-serif",
           color: theme.black,
