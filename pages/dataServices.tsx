@@ -1,14 +1,17 @@
 // pages/login.tsx
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
-import Settings from "../app/components/Settings/Settings";
+import DataServices from "../app/components/DataServices/DataServices";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["settings", "common"])),
+      ...(await serverSideTranslations(locale ?? "en", [
+        "dataServices",
+        "common",
+      ])),
     },
   };
 };
 
-export default Settings;
+export default DataServices;
