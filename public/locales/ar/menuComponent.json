@@ -1,0 +1,13 @@
+{
+  "menu": "القائمة",
+  "account": "الحساب",
+  "admin_dashboard": "لوحة التحكم",
+  "profile": "الملف الشخصي",
+  "logout": "تسجيل الخروج",
+  "sign_up": "تسجيل",
+  "login": "تسجيل الدخول",
+  "data_consulting": "استشارات البيانات",
+  "analytics_solutions": "حلول التحليلات",
+  "data_warehousing": "تخزين البيانات",
+  "settings_directory": "دليل الإعدادات"
+}

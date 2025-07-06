@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "badge": "Professional Contractors",
+    "title": "Building Excellence Since 2008",
+    "description": "Trusted infrastructure and masonry specialists delivering quality construction projects across the region.",
+    "badges": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "infrastructure": "Infrastructure",
+      "licensed": "Licensed"
+    }
+  },
+  "about": {
+    "imageAlt": "Our construction team at work",
+    "title": "About Our Company",
+    "description": "With over a decade of experience, we specialize in delivering high-quality masonry and infrastructure solutions tailored to your specific needs.",
+    "point1": "Fully licensed and insured professionals",
+    "point2": "Quality materials from trusted suppliers",
+    "point3": "Modern construction techniques",
+    "point4": "Timely project completion guarantee"
+  },
+  "stats": {
+    "projects": "Projects Completed",
+    "years": "Years Experience",
+    "clients": "Satisfied Clients",
+    "materials": "Material Types"
+  },
+  "services": {
+    "title": "Our Specialized Services",
+    "residential": {
+      "title": "Residential Construction",
+      "description": "Custom home building and renovation services with premium craftsmanship."
+    },
+    "commercial": {
+      "title": "Commercial Projects",
+      "description": "Office buildings, retail spaces, and commercial complex construction."
+    },
+    "infrastructure": {
+      "title": "Infrastructure",
+      "description": "Bridges, roads, and public works construction services."
+    },
+    "restoration": {
+      "title": "Restoration",
+      "description": "Historic building preservation and structural rehabilitation."
+    }
+  },
+  "history": {
+    "title": "Our Journey",
+    "founded": {
+      "year": "2008",
+      "title": "Company Founded",
+      "description": "Started as a small masonry contractor with a focus on quality residential projects."
+    },
+    "expansion": {
+      "year": "2015",
+      "title": "Regional Expansion",
+      "description": "Grew to serve commercial clients across the entire region."
+    },
+    "innovation": {
+      "year": "2020",
+      "title": "Innovation Era",
+      "description": "Implemented modern construction techniques and sustainable practices."
+    }
+  },
+  "safety": {
+    "title": "Safety Standards",
+    "item1": "OSHA-compliant work sites",
+    "item2": "Regular safety training programs",
+    "item3": "Daily site inspections"
+  },
+  "quality": {
+    "title": "Quality Assurance",
+    "item1": "Premium materials selection",
+    "item2": "Multi-stage quality control",
+    "item3": "10-year structural warranty"
+  }
+}

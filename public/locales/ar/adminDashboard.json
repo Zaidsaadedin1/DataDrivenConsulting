@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "totalUsers": "إجمالي المستخدمين",
+    "totalAppointments": "إجمالي المواعيد",
+    "upcomingAppointments": "المواعيد القادمة",
+    "newUsersThisMonth": "مستخدمين جدد هذا الشهر"
+  },
+  "users": {
+    "title": "المستخدمين",
+    "searchPlaceholder": "بحث المستخدمين...",
+    "noUsers": "لا يوجد مستخدمين",
+    "fields": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "createdAt": "تاريخ الإنشاء"
+    }
+  },
+  "appointments": {
+    "title": "المواعيد",
+    "searchPlaceholder": "بحث المواعيد...",
+    "noAppointments": "لا يوجد مواعيد",
+    "viewDetails": "عرض التفاصيل",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "detailsTitle": "تفاصيل الموعد",
+    "fields": {
+      "client": "العميل",
+      "service": "الخدمة",
+      "propertyType": "نوع العقار",
+      "date": "التاريخ",
+      "time": "الوقت",
+      "status": "الحالة",
+      "actions": "الإجراءات",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "projectDetails": "تفاصيل المشروع",
+      "createdAt": "تاريخ الإنشاء"
+    }
+  },
+  "status": {
+    "Pending": "قيد الانتظار",
+    "Confirmed": "مؤكد",
+    "Cancelled": "ملغى"
+  },
+  "services": {
+    "kitchen_renovation": "ترميم المطابخ",
+    "bathroom_remodeling": "تجديد الحمامات",
+    "interior_design": "التصميم الداخلي",
+    "painting_services": "خدمات الدهان",
+    "commercial_renovation": "ترميم تجاري",
+    "general_contracting": "مقاول عام"
+  }
+}

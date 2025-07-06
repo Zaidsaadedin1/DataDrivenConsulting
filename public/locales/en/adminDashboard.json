@@ -1,0 +1,54 @@
+{
+  "stats": {
+    "totalUsers": "Total Users",
+    "totalAppointments": "Total Appointments",
+    "upcomingAppointments": "Upcoming Appointments",
+    "newUsersThisMonth": "New Users This Month"
+  },
+  "users": {
+    "title": "Users",
+    "searchPlaceholder": "Search users...",
+    "noUsers": "No users found",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "createdAt": "Created At"
+    }
+  },
+  "appointments": {
+    "title": "Appointments",
+    "searchPlaceholder": "Search appointments...",
+    "noAppointments": "No appointments found",
+    "viewDetails": "View Details",
+    "edit": "Edit",
+    "delete": "Delete",
+    "detailsTitle": "Appointment Details",
+    "fields": {
+      "client": "Client",
+      "service": "Service",
+      "propertyType": "Property Type",
+      "date": "Date",
+      "time": "Time",
+      "status": "Status",
+      "actions": "Actions",
+      "email": "Email",
+      "phone": "Phone",
+      "projectDetails": "Project Details",
+      "createdAt": "Created At"
+    }
+  },
+  "status": {
+    "Pending": "Pending",
+    "Confirmed": "Confirmed",
+    "Cancelled": "Cancelled"
+  },
+  "services": {
+    "kitchen_renovation": "Kitchen Renovation",
+    "bathroom_remodeling": "Bathroom Remodeling",
+    "interior_design": "Interior Design",
+    "painting_services": "Painting Services",
+    "commercial_renovation": "Commercial Renovation",
+    "general_contracting": "General Contracting"
+  }
+}

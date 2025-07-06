@@ -1,0 +1,89 @@
+{
+  "title": "Request a Free Consultation",
+  "subtitle": "Fill out the form below to schedule your free home renovation consultation with Mbnakom experts",
+
+  "sections": {
+    "personal_info": "Personal Information",
+    "project_info": "Project Information"
+  },
+
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "serviceType": "Service Type",
+    "propertyType": "Property Type",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "projectDetails": "Project Details"
+  },
+
+  "placeholders": {
+    "firstName": "Enter your first name",
+    "lastName": "Enter your last name",
+    "phone": "Enter your phone number",
+    "email": "Enter your email address",
+    "serviceType": "Select service type",
+    "propertyType": "Select property type",
+    "preferredDate": "Select preferred date",
+    "preferredTime": "Select preferred time",
+    "projectDetails": "Describe your project in detail"
+  },
+
+  "services": {
+    "kitchen_renovation": "Kitchen Renovation",
+    "bathroom_remodeling": "Bathroom Remodeling",
+    "interior_design": "Interior Design",
+    "painting_services": "Painting Services",
+    "commercial_renovation": "Commercial Renovation",
+    "general_contracting": "General Contracting"
+  },
+
+  "propertyTypes": {
+    "apartment": "Apartment",
+    "villa": "Villa",
+    "office": "Office",
+    "commercial": "Commercial Space",
+    "other": "Other"
+  },
+
+  "times": {
+    "morning": "Morning (9AM - 12PM)",
+    "afternoon": "Afternoon (12PM - 4PM)",
+    "evening": "Evening (4PM - 7PM)"
+  },
+
+  "validation": {
+    "firstName_required": "First name is required",
+    "lastName_required": "Last name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Please enter a valid email",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Please enter a valid phone number",
+    "serviceType_required": "Service type is required",
+    "date_required": "Preferred date is required",
+    "time_required": "Preferred time is required",
+    "projectDetails_min": "Project details should be at least 10 characters",
+    "projectDetails_max": "Project details should not exceed 1000 characters",
+    "terms_required": "You must accept the terms and conditions"
+  },
+
+  "links": {
+    "agree": "I agree to the",
+    "terms": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy"
+  },
+
+  "buttons": {
+    "submit": "Request Consultation"
+  },
+
+  "notifications": {
+    "success_title": "Request Submitted",
+    "success_message": "Your consultation request has been received. We'll contact you shortly.",
+    "error_title": "Error",
+    "error_message": "There was an error submitting your request. Please try again."
+  }
+}

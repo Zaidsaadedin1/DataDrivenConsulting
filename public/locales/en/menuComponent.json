@@ -1,0 +1,13 @@
+{
+  "menu": "Menu",
+  "account": "Account",
+  "admin_dashboard": "Admin Dashboard",
+  "profile": "Profile",
+  "logout": "Logout",
+  "sign_up": "Sign Up",
+  "login": "Login",
+  "data_consulting": "Data Consulting",
+  "analytics_solutions": "Analytics Solutions",
+  "data_warehousing": "Data Warehousing",
+  "settings_directory": "Settings Directory"
+}

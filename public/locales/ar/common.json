@@ -1,0 +1,9 @@
+{
+  "unauthorized": {
+    "title": "غير مخول | 401",
+    "login_button": "تسجيل دخول"
+  },
+  "select_language": "اختر اللغة",
+  "English": "الإنجليزية",
+  "Arabic": "العربية"
+}
