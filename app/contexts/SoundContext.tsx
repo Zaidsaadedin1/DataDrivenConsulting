@@ -19,7 +19,6 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [isSoundOn, setIsSoundOn] = useState(false);
-  const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
   const backgroundAudio = useRef<HTMLAudioElement | null>(null);
 
   // Initialize background audio
