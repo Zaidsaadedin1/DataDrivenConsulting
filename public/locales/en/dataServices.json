@@ -1,33 +1,54 @@
 {
   "meta": {
-    "title": "Settings | DataDriven Consulting",
-    "description": "Manage your account settings and preferences"
+    "title": "Data Services | DataDriven Consulting",
+    "description": "Explore our core data services and solutions."
   },
-  "title": "Settings",
-  "account": {
-    "title": "Account",
-    "section_title": "Account Settings",
-    "email_notifications": "Email Notifications",
-    "two_factor_auth": "Two-Factor Authentication",
-    "activity_reports": "Monthly Activity Reports"
-  },
-  "notifications": {
-    "title": "Notifications",
-    "section_title": "Notification Preferences",
-    "description": "Configure how you receive notifications from our platform",
-    "coming_soon": "Notification settings will be available in the next update"
-  },
-  "language": {
-    "title": "Language",
-    "section_title": "Language Preferences",
-    "description": "Change your preferred display language",
-    "coming_soon": "Language selection will be available in the next update"
-  },
-  "privacy": {
-    "title": "Privacy",
-    "section_title": "Privacy Settings",
-    "data_collection": "Allow Data Collection",
-    "personalized_ads": "Personalized Advertisements",
-    "location_tracking": "Location Tracking"
+  "title": "Our Data Services",
+  "subtitle": "We offer a wide range of scalable, secure, and insightful data solutions.",
+  "key_features": "Key Features",
+  "expertise_level": "Enterprise-grade Expertise",
+  "custom_solutions": "Tailored to Your Needs",
+
+  "services": {
+    "data_warehousing": {
+      "title": "Data Warehousing",
+      "description": "Centralized storage solutions for structured data management.",
+      "features": [
+        "Centralized data access",
+        "High-speed querying",
+        "Scalable architecture",
+        "Historical data analysis"
+      ]
+    },
+    "business_intelligence": {
+      "title": "Business Intelligence",
+      "description": "Transform data into actionable insights.",
+      "features": [
+        "Real-time dashboards",
+        "Custom reports",
+        "Predictive analytics",
+        "Self-service BI tools"
+      ]
+    },
+    "cloud_solutions": {
+      "title": "Cloud Data Solutions",
+      "description": "Modern cloud-first architectures for agility and scale.",
+      "features": [
+        "Multi-cloud support",
+        "Serverless pipelines",
+        "Cost-optimized storage",
+        "Global access"
+      ]
+    },
+    "data_governance": {
+      "title": "Data Governance",
+      "description": "Ensure data quality, privacy, and compliance.",
+      "features": [
+        "Policy enforcement",
+        "Access control",
+        "Audit logging",
+        "Compliance reports"
+      ]
+    }
   }
 }
